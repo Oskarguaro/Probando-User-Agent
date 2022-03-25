@@ -1,0 +1,329 @@
+/* Atributos de la ventana principal */
+:root {
+  --main-color: gold;
+  --second-color: black;
+  --my-color: rgb(151, 248, 39);
+  --back-color: rgba(0, 0, 0, 0.83);
+}
+
+html {
+  box-sizing: border-box;
+  font-family: system-ui;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+h1 {
+  background-color: var(--main-color);
+  color: var(--second-color);
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+
+h2 {
+  text-align: center;
+  /* Con esto aseguramos que la posición fija del título principal no tape el título de la sección */
+  padding-top: 4rem;
+}
+
+.seccion {
+  margin-top: 10px;
+  min-height: 800px;
+}
+
+.seccion img {
+  display: block;
+  margin: 50px auto;
+  align-items: center;
+  max-height: 400px;
+}
+
+p {
+  margin: 20px 100px;
+  text-align: justify;
+}
+
+img {
+  max-width: 100%;
+}
+
+.p-centrado {
+  text-align: center;
+  margin: 20px 100px;
+}
+
+/* ******************** Botón Hamburguesa ******************** */
+.btn-menu {
+  position: fixed;
+  bottom: 1rem;
+  right: 1.5rem;
+  z-index: 100;
+  background-color: var(--main-color);
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+}
+
+.btn-menu * {
+  margin: 0px;
+}
+
+/* ******************** Menú Dinámico ******************** */
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+  background-color: var(--back-color);
+  overflow-y: scroll;
+  opacity: 0;
+  transform: translate(-100%, 0);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.is-active {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* .mostrar {
+  animation-name: mostrarMenu;
+  animation-duration: 100ms;
+  animation-fill-mode: forwards;
+} */
+
+.container-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.link-menu {
+  text-align: center;
+  margin: 15px 0px;
+  width: 100%;
+}
+
+.a-link {
+  color: var(--main-color);
+  font-size: 30px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  /* Con all hacemos que todas las propiedades al cambiar a hover lo hagan fluidamente */
+  transition: all 0.3s ease;
+}
+
+.a-link:hover {
+  background-color: var(--main-color);
+  color: var(--second-color);
+}
+
+/* ******************** Reloj Digital ******************** */
+.reloj {
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.btns-reloj {
+  text-align: center;
+}
+
+/* ******************** Eventos del Teclado ******************** */
+.plano {
+  display: flex;
+  background-color: var(--second-color);
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
+  max-width: 900px;
+}
+
+.plano figure {
+  margin: auto;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--my-color);
+  /* transition: transform 0.3s ease; */
+}
+
+/* ******************** Cuenta Regresiva ******************** */
+.temporizador {
+  font-size: 25px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.mensaje {
+  margin-top: 80px;
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  animation-name: textoFiesta;
+  animation-duration: 4s;
+}
+
+@keyframes textoFiesta {
+  from {
+    font-size: 50px;
+  }
+
+  25% {
+    font-size: 100px;
+  }
+
+  50% {
+    font-size: 50px;
+  }
+
+  75% {
+    font-size: 100px;
+  }
+
+  to {
+    font-size: 50px;
+  }
+}
+
+/* ******************** Botón Volver Arriba ******************** */
+.btn_scroll_top {
+  background-color: var(--main-color);
+  position: fixed;
+  bottom: 1rem;
+  right: calc(4.7rem + 1.5rem);
+  height: 70px;
+  width: 70px;
+  border: 0;
+  border-radius: 50%;
+  z-index: 100;
+  font-size: 40px;
+  font-weight: bold;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.ocultar {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.btn_scroll_top:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.btn_ejemplo {
+  background-color: var(--main-color);
+  color: var(--second-color);
+  padding: 5px 10px;
+  border: 0;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* ******************** Botón Tema Oscuro/Día ******************** */
+#btn_temas {
+  background-color: var(--second-color);
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  height: 70px;
+  width: 70px;
+  border: 0;
+  border-radius: 50%;
+  z-index: 100;
+  font-size: 40px;
+  font-weight: bold;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+#btn_temas:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.btn-ejem-tema {
+  background-color: var(--second-color);
+  color: var(--second-color);
+  padding: 5px;
+  border: 0;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* ******************** Local Storage ******************** */
+.btn-ejem-actualizar-cerrar {
+  font-size: 30px;
+}
+
+/* ******************** Responsive JavaScript ******************** */
+.contenedor-iframe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.contenedor-iframe iframe {
+  margin-top: 2rem;
+  border: 1px solid var(--main-color);
+  border-radius: 3px;
+}
+
+.contenedor-iframe a {
+  margin-top: 5px;
+  text-decoration: none;
+}
+
+/* ******************** Responsive Tester ******************** */
+#formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#formulario input {
+  width: 300px;
+}
+
+.btn-test {
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* ******************** User Agent ******************** */
+#lista-user-agent {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 3rem;
+  align-items: center;
+}
+
+/* #lista-user-agent li {
+  margin-bottom: 10px;
+  width: 100%;
+} */
