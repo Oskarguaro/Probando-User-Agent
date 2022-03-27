@@ -9,7 +9,7 @@
 html {
   box-sizing: border-box;
   font-family: system-ui;
-  font-size: 16px;
+  font-size: 20px;
   scroll-behavior: smooth;
 }
 
@@ -323,7 +323,63 @@ img {
   align-items: center;
 }
 
-/* #lista-user-agent li {
-  margin-bottom: 10px;
+/* ******************** User Agent ******************** */
+.online {
+  background-color: rgb(11, 199, 11);
+  color: var(--second-color);
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  position: fixed;
+  top: -15%;
+  z-index: 11;
   width: 100%;
-} */
+  padding: 20px;
+  animation-name: conexion;
+  animation-duration: 4s;
+}
+
+.offline {
+  background-color: red;
+  color: var(--second-color);
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  position: fixed;
+  top: -15%;
+  z-index: 11;
+  width: 100%;
+  padding: 20px;
+  animation-name: conexion;
+  animation-duration: 4s;
+}
+
+@keyframes conexion {
+  from {
+    top: -15%;
+  }
+
+  10% {
+    top: 0;
+  }
+
+  90% {
+    top: 0;
+  }
+
+  to {
+    top: -15%;
+  }
+}
+
+/* ******************** User Agent ******************** */
+.p-conexion {
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.img-conexion {
+  margin: 0px auto !important;
+  max-height: 600px !important;
+}

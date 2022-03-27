@@ -17,6 +17,7 @@ import tamañoRenponsive from "./responsive.js";
 //Función probar ventana responsive
 import testResponsive from "./test_responsive.js";
 import infoUserAgent from "./user_agent.js";
+import detectorConexion from "./detector_conexion.js";
 
 //Variables generales
 const d = document;
@@ -38,6 +39,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
     tamañoRenponsive(".contenedor-iframe");
     testResponsive("formulario", "btn_abrir_test", "btn_cerrar_test");
     infoUserAgent("lista-user-agent");
+    detectorConexion(".seccion11");
 });
 
 //Saco la funcion del evento "DOMContentLoaded" del js principal para poder ejecutar el evento "DOMContentLoaded" que se encuentra dentro de la función cambiarTema()

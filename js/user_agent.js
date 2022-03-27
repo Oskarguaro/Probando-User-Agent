@@ -1,9 +1,7 @@
 //Variables generales
 const n = navigator,
     d = document;
-console.log(n)
-console.log(n.userAgent);
-console.log(n.userAgent.match(/iphone|ipad|ipod/i));
+
 export default function infoUserAgent(id) {
     const $listaUserAgent = d.getElementById(id);
     
@@ -15,8 +13,6 @@ export default function infoUserAgent(id) {
             : n.userAgentData.brands[2].brand
     }
     
-    console.log(datosNavegador.plataforma);
-    console.log(datosNavegador.navegador);
     $listaUserAgent.innerHTML = `
     <ul>
         <li>Agente de Usuario: <b>${datosNavegador.agenteDeUsuario}</b></li>
@@ -28,17 +24,17 @@ export default function infoUserAgent(id) {
 
     if(datosNavegador.navegador === "Google Chrome"){
         $listaUserAgent.innerHTML += `<p><mark>Este contenido sólo se ve en Chrome</mark></p>`
-    }
+    };
 
     if(datosNavegador.navegador === "Firefox"){
         $listaUserAgent.innerHTML += `<p><mark>Este contenido sólo se ve en Firefox</mark></p>`
-    }
+    };
 
     if(datosNavegador.plataforma.match(/windows/i)){
         $listaUserAgent.innerHTML += `<p><mark>Este contenido sólo se ve en plataformas de escritorio</mark></p>`
-    }
+    };
 
     if(datosNavegador.plataforma.match(/iphone|ipod|ipad|android|windows phone/i)){
         $listaUserAgent.innerHTML += `<p><mark>Este contenido sólo se ve en dispositivos móviles</mark></p>`
-    }
+    };
 };
