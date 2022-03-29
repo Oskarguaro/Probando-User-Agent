@@ -16,11 +16,19 @@ import temaLocalStorage from "./local_storage.js";
 import tamañoRenponsive from "./responsive.js";
 //Función probar ventana responsive
 import testResponsive from "./test_responsive.js";
+//Función para obtener datos del User Agent
 import infoUserAgent from "./user_agent.js";
+//Función para detectar estado de la conexión
 import detectorConexion from "./detector_conexion.js";
+//Función para detectar cámara y dispositivos
+import detectarCam from "./deteccion_cam.js";
+//Función para activar la geolocalización
+import geoLocalización from "./geolocalizacion.js";
 
 //Variables generales
-const d = document;
+const d = document,
+    w = window,
+    n = navigator;
 const $secciones = d.querySelectorAll(".seccion");
 // console.log($secciones[2]);
 
@@ -39,10 +47,15 @@ d.addEventListener("DOMContentLoaded", (e) => {
     tamañoRenponsive(".contenedor-iframe");
     testResponsive("formulario", "btn_abrir_test", "btn_cerrar_test");
     infoUserAgent("lista-user-agent");
-    detectorConexion(".seccion11");
+    detectarCam(".seccion12", "iniciar-cam", "detener-cam");
 });
 
 //Saco la funcion del evento "DOMContentLoaded" del js principal para poder ejecutar el evento "DOMContentLoaded" que se encuentra dentro de la función cambiarTema()
 cambiarTema("btn_temas");
 
+//Se puede dejar por fuera de la carga del DOM
+detectorConexion(".seccion11");
 
+w.addEventListener("load", (e) => {
+    geoLocalización(".seccion13");
+});

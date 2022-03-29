@@ -10,15 +10,19 @@ export default function detectorConexion(seccion) {
 
     if(!$seccion11.querySelector(".img-conexion")){
         if(n.onLine){
-            $seccion11.children[1].innerHTML += `
+            const $div2 = d.createElement("div"); 
+            $div2.innerHTML = `
                 <p class="p-conexion">Online</p>
                 <img class="img-conexion" src="imagenes/conectado.png" alt="Conexion">
             `
+            $seccion11.insertBefore($div2, $seccion11.children[2]);
         } else {
-            $seccion11.innerHTML += `
+            const $div2 = d.createElement("div"); 
+            $div2.innerHTML = `
                 <p class="p-conexion">Offline</p>
                 <img class="img-conexion" src="imagenes/desconectado.png" alt="Descsonectado">
             `
+            $seccion11.insertBefore($div2, $seccion11.children[2]); 
         };
     };
 

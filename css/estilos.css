@@ -39,6 +39,7 @@ h2 {
   text-align: center;
   /* Con esto aseguramos que la posición fija del título principal no tape el título de la sección */
   padding-top: 4rem;
+  margin-bottom: 2rem;
 }
 
 .seccion {
@@ -49,22 +50,18 @@ h2 {
 .seccion img {
   display: block;
   margin: 50px auto;
-  align-items: center;
   max-height: 400px;
+  max-width: 100%;
 }
 
 p {
-  margin: 20px 100px;
+  margin: 5px 100px;
   text-align: justify;
-}
-
-img {
-  max-width: 100%;
 }
 
 .p-centrado {
   text-align: center;
-  margin: 20px 100px;
+  margin: 5px 100px;
 }
 
 /* ******************** Botón Hamburguesa ******************** */
@@ -307,11 +304,16 @@ img {
 
 #formulario input {
   width: 300px;
+  font-size: 16px;
 }
 
 .btn-test {
   text-align: center;
   margin-top: 10px;
+}
+
+.btn-test button {
+  font-size: 16px;
 }
 
 /* ******************** User Agent ******************** */
@@ -382,4 +384,28 @@ img {
 .img-conexion {
   margin: 0px auto !important;
   max-height: 600px !important;
+}
+
+/* ******************** Detección Cámara ******************** */
+.video-cam {
+  display: block;
+  margin: auto auto;
+  margin-top: 60px;
+  width: 60%;
+}
+
+.btns-video {
+  text-align: center;
+}
+
+.btns-video button {
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+/* ******************** User Agent ******************** */
+.seccion13 a {
+  display: block;
+  margin: auto;
+  width: max-content;
 }
